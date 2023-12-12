@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Class {
+public class Group {
 
     Course lessonPlan;
     ArrayList<Student> students;
