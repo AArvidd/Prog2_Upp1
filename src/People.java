@@ -28,4 +28,20 @@ public class People {
     public int getPhoneNumber() {
         return phoneNumber;
     }
+
+    public void changeeMail(String eMail) {
+        this.eMail = eMail;
+    }
+
+    public void changePhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void shangefName(String fName) {
+        this.fName = fName;
+    }
+
+    public void changelName(String lName) {
+        this.lName = lName;
+    }
 }
