@@ -13,6 +13,10 @@ public class School {
         this.principal = principal;
     }
 
+    public School(String name){
+        this.name = name;
+    }
+
 
     public String getName() {
         return name;

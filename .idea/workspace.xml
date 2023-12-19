@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="added code">
+    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="started adding functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Group.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Guardian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Guardian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lectures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lectures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/School.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +60,8 @@
       <workItem from="1702284710966" duration="11000" />
       <workItem from="1702287009326" duration="2297000" />
       <workItem from="1702385247031" duration="4168000" />
-      <workItem from="1702889567671" duration="4232000" />
+      <workItem from="1702889567671" duration="4651000" />
+      <workItem from="1702990726909" duration="2071000" />
     </task>
     <task id="LOCAL-00001" summary="Created all classFiles and started adding relations between classes">
       <option name="closed" value="true" />
@@ -84,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702389449275</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="started adding functionality">
+      <option name="closed" value="true" />
+      <created>1702894253484</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702894253484</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +96,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created all classFiles and started adding relations between classes" />
     <MESSAGE value="added code" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code" />
+    <MESSAGE value="started adding functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="started adding functionality" />
   </component>
 </project>

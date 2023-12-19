@@ -14,9 +14,9 @@ public class MainSystem {
             int choice = -1;
 
             while (true) {
-                System.out.println("What do you due?");
+                System.out.println("What do you want to do?");
                 System.out.print("""
-                        1: add People
+                        1: add Student
                         2: add Staff
                         3: add schools
                         4: add Courses
@@ -38,8 +38,34 @@ public class MainSystem {
             }
 
 
+            switch(choice){
+                case 1 -> createPeople();
+                case 3 -> createSchool();
+            }
+
 
         }
+    }
+
+    public void createSchool(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Name of the school: ");
+        String sName = scan.nextLine();
+
+        System.out.println("Principals first name: ");
+        String fName = scan.nextLine();
+
+        System.out.println("Principals last name: ");
+        String eName = scan.nextLine();
+
+    }
+
+    private void createPeople(){
+        Scanner scan = new Scanner(System.in);
+
+
+
     }
 
     public void addPeople(People people) {
