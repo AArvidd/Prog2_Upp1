@@ -1,10 +1,10 @@
-public class Staff extends People{
+public class Staff extends People {
 
     int salary;
     String position;
 
-    public Staff(String fName, String lName, String eMail, int phoneNumber, int salary, String position){
-        super(fName, lName, eMail, phoneNumber);
+    public Staff(MainSystem main, String fName, String lName, int phoneNumber, int salary, String position){
+        super(main, fName, lName, phoneNumber);
 
         setSalary(salary);
 

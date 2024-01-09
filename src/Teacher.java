@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Teacher extends Staff{
+public class Teacher extends Staff {
 
     ArrayList<Lectures> lectures;
 
-    public Teacher(String fName, String lName, String eMail, int phoneNumber, int salary, ArrayList<Lectures> lectures){
-        super(fName, lName, eMail, phoneNumber, salary, "Teacher");
+    public Teacher(MainSystem main, String fName, String lName, int phoneNumber, int salary, ArrayList<Lectures> lectures){
+        super(main, fName, lName, phoneNumber, salary, "Teacher");
         this.lectures = lectures;
     }
 

@@ -1,7 +1,7 @@
-public class Admin extends Staff{
+public class Admin extends Staff {
 
-    public Admin (String fName, String lName, String eMail, int phoneNumber, int salary, String position){
-        super(fName, lName, eMail, phoneNumber, salary, position);
+    public Admin (MainSystem main, String fName, String lName, int phoneNumber, int salary, String position){
+        super(main, fName, lName, phoneNumber, salary, position);
     }
 
 

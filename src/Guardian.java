@@ -1,13 +1,26 @@
-public class Guardian extends People{
+public class Guardian extends People {
 
     Student child;
 
-    public Guardian(String fName, String lName, String eMail, int phoneNumber, Student child){
-        super(fName, lName, eMail, phoneNumber);
+    public Guardian(MainSystem main, String fName, String lName, int phoneNumber, Student child){
+        super(main, fName, lName, phoneNumber);
         this.child = child;
     }
 
     public Student getChild() {
         return child;
+    }
+
+    public void shangeeMain(String eMail){
+        this.eMail = eMail;
+    }
+
+    public void shangefName(String fName) {
+        this.fName = fName;
+
+    }
+
+    public void changelName(String lName) {
+        this.lName = lName;
     }
 }

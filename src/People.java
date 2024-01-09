@@ -6,10 +6,12 @@ public class People {
     protected String eMail;
     protected int phoneNumber;
 
-    protected People (String fName, String lName, String eMail, int phoneNumber){
+    protected MainSystem main;
+
+    protected People (MainSystem main, String fName, String lName, int phoneNumber){
+        this.main = main;
         this.fName = fName;
         this.lName = lName;
-        this.eMail = eMail;
         this.phoneNumber = phoneNumber;
     }
 
@@ -29,8 +31,11 @@ public class People {
         return phoneNumber;
     }
 
-    public void changeeMail(String eMail) {
-        this.eMail = eMail;
+    public void changeeMail(String additional) {
+        String eMail = this.fName + "." + this.lName + "@";
+        if(!additional.isEmpty())
+            eMail = eMail + additional + ".";
+        eMail = eMail + this.main.getDomain() + ".se";
     }
 
     public void changePhoneNumber(int phoneNumber) {
@@ -39,9 +44,12 @@ public class People {
 
     public void shangefName(String fName) {
         this.fName = fName;
+        changeeMail("");
+
     }
 
     public void changelName(String lName) {
         this.lName = lName;
+        changeeMail("");
     }
 }

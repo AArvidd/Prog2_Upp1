@@ -8,6 +8,9 @@ public class MainSystem {
     private ArrayList<School> schools;
     private ArrayList<Course> courses;
 
+    String name;
+    String domain;
+
     public MainSystem() {
         Scanner scan = new Scanner(System.in);
         while(true) {
@@ -39,7 +42,7 @@ public class MainSystem {
 
 
             switch(choice){
-                case 1 -> createPeople();
+                case 1 -> createStudent();
                 case 3 -> createSchool();
             }
 
@@ -61,8 +64,22 @@ public class MainSystem {
 
     }
 
-    private void createPeople(){
+    private void createStudent(){
         Scanner scan = new Scanner(System.in);
+
+        if(this.schools.isEmpty()){
+            System.out.println("No Schools exist");
+            return;
+        }
+
+        String[] questions = {
+                "first name",
+                "last name",
+        };
+
+        for(int i = 0; i < questions.length; i++){
+
+        }
 
 
 
@@ -86,4 +103,7 @@ public class MainSystem {
         this.courses.add(course);
     }
 
+    public String getDomain() {
+        return domain;
+    }
 }

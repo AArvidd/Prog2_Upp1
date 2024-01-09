@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-
-public class Principal extends Admin{
+public class Principal extends Admin {
 
     School school;
 
-    public Principal (String fName, String lName, String eMail, int phoneNumber, int salary, School school){
-        super(fName, lName, eMail, phoneNumber, salary, "Principal");
+    public Principal (MainSystem main, String fName, String lName, int phoneNumber, int salary, School school){
+        super(main, fName, lName, phoneNumber, salary, "Principal");
 
         this.school = school;
 
