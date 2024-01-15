@@ -14,4 +14,8 @@ public class Group {
     public void addStudents(Student students) {
         this.students.add(students);
     }
+
+    public String getName() {
+        return name;
+    }
 }

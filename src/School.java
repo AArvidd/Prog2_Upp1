@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class School {
 
-    String name;
+    private String name;
     private ArrayList<Course> courses;
     private ArrayList<Group> classes;
     private Principal principal;

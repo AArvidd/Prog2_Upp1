@@ -3,7 +3,7 @@ public class Student extends People {
     private Group group;
     private Guardian parent;
 
-    public Student(MainSystem main, String fName, String lName, int phoneNumber, Group group, Guardian parent){
+    public Student(MainSystem main, String fName, String lName, long phoneNumber, Group group, Guardian parent){
         super(main, fName, lName, phoneNumber);
         this.group = group;
         this.parent = parent;

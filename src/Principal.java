@@ -2,7 +2,7 @@ public class Principal extends Admin {
 
     School school;
 
-    public Principal (MainSystem main, String fName, String lName, int phoneNumber, int salary, School school){
+    public Principal (MainSystem main, String fName, String lName, long phoneNumber, int salary, School school){
         super(main, fName, lName, phoneNumber, salary, "Principal");
 
         this.school = school;

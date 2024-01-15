@@ -4,11 +4,11 @@ public class People {
     protected String lName;
 
     protected String eMail;
-    protected int phoneNumber;
+    protected long phoneNumber;
 
     protected MainSystem main;
 
-    protected People (MainSystem main, String fName, String lName, int phoneNumber){
+    protected People (MainSystem main, String fName, String lName, long phoneNumber){
         this.main = main;
         this.fName = fName;
         this.lName = lName;
@@ -27,7 +27,7 @@ public class People {
         return eMail;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
