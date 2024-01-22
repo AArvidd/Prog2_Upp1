@@ -3,10 +3,11 @@ import java.util.ArrayList;
 public class School {
 
     private String name;
-    private ArrayList<Course> courses;
-    private ArrayList<Group> classes;
+    private ArrayList<Course> courses = new ArrayList<>();
+    private ArrayList<Group> classes = new ArrayList<>();
     private Principal principal;
-    private ArrayList<Staff> staff;
+    private ArrayList<Staff> staff = new ArrayList<>();
+    private ArrayList<Student> students = new ArrayList<>();
 
     public School(String name, Principal principal) {
         this.name = name;
@@ -53,6 +54,10 @@ public class School {
 
     public void addStaff(Staff staff){
         this.staff.add(staff);
+    }
+
+    public void addStudent(Student student){
+        this.students.add(student);
     }
 
 }

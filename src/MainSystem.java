@@ -1,25 +1,26 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.SortedMap;
 
 public class MainSystem {
 
-    private ArrayList<People> people;
-    private ArrayList<Staff>  staff;
-    private ArrayList<School> schools;
-    private ArrayList<Course> courses;
+    private ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Staff>  staff = new ArrayList<>();
+    private ArrayList<School> schools = new ArrayList<>();
+    private ArrayList<Course> courses = new ArrayList<>();
 
     String name;
     String domain;
 
     public MainSystem() {
         Scanner scan = new Scanner(System.in);
+        boolean exit = false;
         while(true) {
             int choice = -1;
 
             while (true) {
                 System.out.println("What do you want to do?");
                 System.out.print("""
+                        0: close program
                         1: add Student
                         2: add Staff
                         3: add schools
@@ -34,7 +35,7 @@ public class MainSystem {
                     continue;
                 }
 
-                if(choice < 5 && choice > 0){
+                if(choice < 5 && choice >= 0){
                     break;
                 }
 
@@ -43,25 +44,80 @@ public class MainSystem {
 
 
             switch(choice){
+                case 0 -> exit = true;
                 case 1 -> createStudent();
                 case 3 -> createSchool();
             }
 
+            if (exit){
+                break;
+            }
 
         }
+        System.out.println("\nShutting down...");
     }
 
     public void createSchool(){
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Name of the school: ");
+        System.out.print("Name of the school: ");
         String sName = scan.nextLine();
 
-        System.out.println("Principals first name: ");
+        System.out.print("Principal's first name: ");
         String fName = scan.nextLine();
 
-        System.out.println("Principals last name: ");
+        System.out.print("Principal's last name: ");
         String eName = scan.nextLine();
+
+
+        long phoneNumber;
+        while (true) {
+            System.out.print("What is the students phone number: ");
+
+            try {
+                phoneNumber = scan.nextLong();
+            }catch (Exception e){
+                System.out.println("Invalid phone number");
+                scan.nextLine();
+                phoneNumber = -1;
+                continue;
+            }
+
+            if(phoneNumber < 0){
+                System.out.println("Invalid phone number");
+                phoneNumber = -1;
+                continue;
+            }
+
+            break;
+        }
+
+
+        int pSalary = -1;
+        while (true) {
+            System.out.print("principal's salary: ");
+
+            try{
+                pSalary = scan.nextInt();
+            }catch (Exception e){
+                System.out.println("invalid salary");
+                pSalary = -1;
+                scan.nextLine();
+                continue;
+            }
+
+            if(pSalary < 0){
+                System.out.println("invalid salary");
+                continue;
+            }
+
+            break;
+        }
+
+        Principal temp = new Principal(this, fName, eName, phoneNumber, pSalary);
+
+        addStaff(temp);
+        addSchool(new School(sName, temp));
 
     }
 
@@ -162,10 +218,16 @@ public class MainSystem {
             System.out.print("What is the students phone number: ");
 
             try {
-                phoneNumber = scan.nextInt();
+                phoneNumber = scan.nextLong();
             }catch (Exception e){
                 System.out.println("Invalid phone number");
                 scan.nextLine();
+                phoneNumber = -1;
+                continue;
+            }
+
+            if(phoneNumber < 0){
+                System.out.println("Invalid phone number");
                 phoneNumber = -1;
                 continue;
             }
@@ -174,7 +236,6 @@ public class MainSystem {
         }
 
         //parent
-
         String[] guardianName = new String[2];
 
         for (int i = 0; i < 2; i++) {
@@ -182,18 +243,41 @@ public class MainSystem {
             guardianName[i] = scan.nextLine();
         }
 
+        long guardianPhoneNumber = -1;
+
+        while (true) {
+            System.out.print("what is the guardian's phone number: ");
+            try {
+                guardianPhoneNumber = scan.nextLong();
+            } catch (Exception e) {
+                System.out.println("Invalid phone number");
+                scan.nextLine();
+                continue;
+            }
+
+            if (guardianPhoneNumber < 0){
+                System.out.println("Invalid phone number");
+                guardianPhoneNumber = -1;
+                continue;
+            }
+
+            break;
+        }
+
+        Guardian temp = new Guardian(this, guardianName[0], guardianName[1], guardianPhoneNumber);
+        this.students.add(new Student(this, studentName[0], studentName[1], phoneNumber, selectedSchool.getClasses().get(classChois), temp));
+        selectedSchool.addStudent(this.students.get(this.students.size()-1));
 
 
     }
 
-    public void addPeople(People people) {
-        this.people.add(people);
+    public void addStudent(Student student) {
+        this.students.add(student);
     }
 
 
     public void addStaff(Staff staff){
         this.staff.add(staff);
-        addPeople(staff);
     }
 
     public void addSchool(School school){

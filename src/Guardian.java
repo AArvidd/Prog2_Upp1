@@ -2,9 +2,8 @@ public class Guardian extends People {
 
     Student child;
 
-    public Guardian(MainSystem main, String fName, String lName, long phoneNumber, Student child){
+    public Guardian(MainSystem main, String fName, String lName, long phoneNumber){
         super(main, fName, lName, phoneNumber);
-        this.child = child;
     }
 
     public Student getChild() {
