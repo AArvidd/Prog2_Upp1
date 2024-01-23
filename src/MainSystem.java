@@ -7,6 +7,7 @@ public class MainSystem {
     private ArrayList<Staff>  staff = new ArrayList<>();
     private ArrayList<School> schools = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
+    private ArrayList<Lectures> lessons = new ArrayList<>();
 
     String name;
     String domain;
@@ -14,18 +15,24 @@ public class MainSystem {
     public MainSystem() {
         Scanner scan = new Scanner(System.in);
         boolean exit = false;
+        
+        String[] questions = {
+                "close program",
+                "add Student",
+                "add Schools",
+                "add Courses",
+                "goto Schools"
+        };
+        
         while(true) {
             int choice = -1;
 
             while (true) {
-                System.out.println("What do you want to do?");
-                System.out.print("""
-                        0: close program
-                        1: add Student
-                        2: add Staff
-                        3: add schools
-                        4: add Courses
-                        Choice: """);
+                System.out.println("\nWhat do you want to do?");
+                for (int i = 0; i < questions.length; i++) {
+                    System.out.println((i+1) + ": " + questions[i]);
+                }
+                System.out.print("Choice: ");
 
                 try {
                     choice = scan.nextInt();
@@ -35,18 +42,20 @@ public class MainSystem {
                     continue;
                 }
 
-                if(choice < 5 && choice >= 0){
+                if(choice < questions.length && choice >= 0){
                     break;
                 }
 
                 System.out.println("Illegal answer");
             }
+            System.out.println();
 
 
             switch(choice){
                 case 0 -> exit = true;
                 case 1 -> createStudent();
-                case 3 -> createSchool();
+                case 2 -> createSchool();
+                case 3 -> createCourse();
             }
 
             if (exit){
@@ -61,13 +70,13 @@ public class MainSystem {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Name of the school: ");
-        String sName = scan.nextLine();
+        String sName = scan.next();
 
         System.out.print("Principal's first name: ");
-        String fName = scan.nextLine();
+        String fName = scan.next();
 
         System.out.print("Principal's last name: ");
-        String eName = scan.nextLine();
+        String eName = scan.next();
 
 
         long phoneNumber;
@@ -118,6 +127,7 @@ public class MainSystem {
 
         addStaff(temp);
         addSchool(new School(sName, temp));
+        temp.setSchool(this.schools.get(this.schools.size()-1));
 
     }
 
@@ -135,7 +145,7 @@ public class MainSystem {
 
         while (true) {
             System.out.println("Choose a School");
-            for (int i = 0; i < this.schools.toArray().length; i++){
+            for (int i = 0; i < this.schools.size(); i++){
                 System.out.println((i+1) + ": " + this.schools.get(i).getName());
             }
             System.out.print("Choice: ");
@@ -151,7 +161,7 @@ public class MainSystem {
 
             choice--;
 
-            if (choice < 0 || choice >= this.schools.toArray().length){
+            if (choice <= 0 || choice > this.schools.size()){
                 System.out.println("Invalid option");
                 break;
             }
@@ -168,27 +178,27 @@ public class MainSystem {
             return;
         }
 
-        int classChois;
+        int classChoice;
 
         while (true) {
             System.out.println("Choose a class");
-            for (int i = 0; i < selectedSchool.getClasses().toArray().length; i++){
+            for (int i = 0; i < selectedSchool.getClasses().size(); i++){
                 System.out.println((i+1) + ": " + selectedSchool.getClasses().get(i).getName());
             }
             System.out.print("Choice: ");
 
             try {
-                classChois = scan.nextInt();
+                classChoice = scan.nextInt();
             }catch (Exception e){
                 System.out.println("Invalid option");
                 scan.nextLine();
-                classChois = -1;
+                classChoice = -1;
                 continue;
             }
 
-            classChois--;
+            classChoice--;
 
-            if (classChois < 0 || classChois >= selectedSchool.getClasses().toArray().length){
+            if (classChoice <= 0 || classChoice > selectedSchool.getClasses().size()){
                 System.out.println("Invalid option");
                 break;
             }
@@ -207,7 +217,7 @@ public class MainSystem {
 
         for(int i = 0; i < questions.length; i++){
             System.out.println("What is the student's " + questions[i]);
-            studentName[i] = scan.nextLine();
+            studentName[i] = scan.next();
         }
 
 
@@ -240,7 +250,7 @@ public class MainSystem {
 
         for (int i = 0; i < 2; i++) {
             System.out.println("What is the guardian's " + questions[i]);
-            guardianName[i] = scan.nextLine();
+            guardianName[i] = scan.next();
         }
 
         long guardianPhoneNumber = -1;
@@ -265,10 +275,20 @@ public class MainSystem {
         }
 
         Guardian temp = new Guardian(this, guardianName[0], guardianName[1], guardianPhoneNumber);
-        this.students.add(new Student(this, studentName[0], studentName[1], phoneNumber, selectedSchool.getClasses().get(classChois), temp));
+        this.students.add(new Student(this, studentName[0], studentName[1], phoneNumber, selectedSchool.getClasses().get(classChoice), temp));
         selectedSchool.addStudent(this.students.get(this.students.size()-1));
 
 
+    }
+
+    private void createCourse(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Course's name");
+        String name = scan.next();
+
+        this.courses.add(new Course(this, name));
+        this.courses.get(this.courses.size()-1).populateCourse();
     }
 
     public void addStudent(Student student) {
@@ -290,5 +310,9 @@ public class MainSystem {
 
     public String getDomain() {
         return domain;
+    }
+
+    public ArrayList<Lectures> getLessons() {
+        return lessons;
     }
 }

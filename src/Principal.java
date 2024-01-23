@@ -22,4 +22,7 @@ public class Principal extends Admin {
         this.salary = salary;
     }
 
+    public void setSchool(School school) {
+        this.school = school;
+    }
 }
