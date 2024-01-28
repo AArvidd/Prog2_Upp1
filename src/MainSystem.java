@@ -25,7 +25,7 @@ public class MainSystem {
         };
         
         while(true) {
-            int choice = -1;
+            int choice;
 
             while (true) {
                 System.out.println("\nWhat do you want to do?");
@@ -41,6 +41,8 @@ public class MainSystem {
                     System.out.println("Illegal answer");
                     continue;
                 }
+
+                choice--;
 
                 if(choice < questions.length && choice >= 0){
                     break;
@@ -71,12 +73,15 @@ public class MainSystem {
 
         System.out.print("Name of the school: ");
         String sName = scan.next();
+        scan.nextLine();
 
         System.out.print("Principal's first name: ");
         String fName = scan.next();
+        scan.nextLine();
 
         System.out.print("Principal's last name: ");
         String eName = scan.next();
+        scan.nextLine();
 
 
         long phoneNumber;
@@ -291,10 +296,112 @@ public class MainSystem {
         this.courses.get(this.courses.size()-1).populateCourse();
     }
 
+    public Teacher createTeacher(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("What is the teacher's first name: ");
+        String fName = scan.next();
+
+        System.out.print("what is the teacher's last name: ");
+        String eName = scan.next();
+
+
+        long phoneNumber;
+
+        while (true) {
+            System.out.print("What is the teacher's phone number: ");
+
+            try {
+                phoneNumber = scan.nextLong();
+            }catch (Exception e){
+                System.out.println("Invalid phone number");
+                scan.nextLine();
+                phoneNumber = -1;
+                continue;
+            }
+
+            if(phoneNumber < 0){
+                System.out.println("Invalid phone number");
+                phoneNumber = -1;
+                continue;
+            }
+
+            break;
+        }
+
+        int salary;
+
+        while(true){
+            System.out.print("What is the teacher's salary: ");
+
+            try {
+                salary = scan.nextInt();
+            }catch (Exception e){
+                System.out.println("Invalid salary");
+                scan.nextLine();
+                salary = -1;
+                continue;
+            }
+
+            if(salary < 0){
+                System.out.println("Invalid salary");
+                salary = -1;
+                continue;
+            }
+
+            break;
+        }
+
+        Teacher teacher = new Teacher(this, fName, eName, phoneNumber, salary);
+
+        this.staff.add(teacher);
+        return teacher;
+    }
+
+    public void createLectures(){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("What is the lesson's name: ");
+        String name = scan.next();
+
+
+        int points;
+
+        while(true){
+            System.out.print("How many points is the lecture worth: ");
+
+            try {
+                points = scan.nextInt();
+            }catch (Exception e){
+                System.out.println("Invalid points");
+                scan.nextLine();
+                points = -1;
+                continue;
+            }
+
+            if(points < 0){
+                System.out.println("Invalid points");
+                points = -1;
+                continue;
+            }
+
+            break;
+        }
+
+        this.lessons.add(new Lectures(null, name, points));
+
+    }
+
+    public Lectures copyLecture(int index, Teacher teacher){
+        Lectures template = this.lessons.get(index);
+
+        return new Lectures(teacher, template.getName(), template.getPoints());
+    }
+
+
     public void addStudent(Student student) {
         this.students.add(student);
     }
-
 
     public void addStaff(Staff staff){
         this.staff.add(staff);
@@ -307,6 +414,7 @@ public class MainSystem {
     public void addCourse(Course course){
         this.courses.add(course);
     }
+
 
     public String getDomain() {
         return domain;

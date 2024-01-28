@@ -7,7 +7,6 @@ public class Course {
     private String name;
     private ArrayList<Lectures> lessons = new ArrayList<>();
     private int points;
-    private ArrayList<Teacher> teachers = new ArrayList<>();
 
     public Course(MainSystem main, String name){
         this.main = main;
@@ -49,8 +48,8 @@ public class Course {
 
             switch (choice){
                 case 1 -> chooseLesson();
-                case 2 -> createLesson(); // todo
-                case 3: {
+                case 2 -> createLesson();
+                case 3 -> {
                     System.out.println("Are you sure? (y/n): ");
                     char exit = scan.next().charAt(0);
 
@@ -64,7 +63,7 @@ public class Course {
                     }
 
                 }
-                default: {
+                default -> {
                     System.out.println("Illegal answer");
                     continue;
                 }
@@ -80,12 +79,56 @@ public class Course {
         }
     }
 
-    //TODO complete this
     private void chooseLesson(){
+        Scanner scan = new Scanner(System.in);
         ArrayList<Lectures> potential = main.getLessons();
 
-        System.out.println("chce a ");
+        int choice;
 
+        while(true) {
+            if (potential.isEmpty()) {
+                System.out.println("\nNo existing lesson exist");
+                return;
+            }
+
+            System.out.println("Chose a lesson for the course");
+            for (int i = 0; i < potential.size(); i++) {
+                Lectures current = potential.get(i);
+                System.out.println((i + 1) + ": " + current.getName() + " worth " + current.getPoints() + "points");
+            }
+
+            try{
+                choice = scan.nextInt();
+            }catch (Exception e){
+                System.out.println("Illegal answer");
+                scan.nextLine();
+                continue;
+            }
+
+            choice--;
+
+            if(choice >= 0 && choice < potential.size()){
+                break;
+            }
+
+            System.out.println("Illegal answer");
+        }
+
+        Teacher teacher = main.createTeacher();
+        this.lessons.add(main.copyLecture(choice, teacher));
+        countPoints();
+    }
+
+    private void createLesson(){
+        main.createLectures();
+        Teacher teacher = main.createTeacher();
+        this.lessons.add(main.copyLecture(main.getLessons().size() - 1, teacher));
+        countPoints();
+    }
+
+    private void countPoints(){
+        for (Lectures lesson: this.lessons)
+            this.points += lesson.getPoints();
     }
 
 }

@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="coad&#10;mutch coad">
+    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="daaes stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lectures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lectures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Teacher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -98,7 +100,9 @@
       <workItem from="1705308521691" duration="4610000" />
       <workItem from="1705913642969" duration="4639000" />
       <workItem from="1705943351501" duration="3652000" />
-      <workItem from="1706014033860" duration="3917000" />
+      <workItem from="1706014033860" duration="4369000" />
+      <workItem from="1706267899444" duration="3957000" />
+      <workItem from="1706462260434" duration="4873000" />
     </task>
     <task id="LOCAL-00001" summary="Created all classFiles and started adding relations between classes">
       <option name="closed" value="true" />
@@ -156,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705918291480</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="daaes stuff">
+      <option name="closed" value="true" />
+      <created>1706018450296</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706018450296</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +182,7 @@
     <MESSAGE value="no free eMails" />
     <MESSAGE value="addet to the coad to define a child" />
     <MESSAGE value="coad&#10;mutch coad" />
-    <option name="LAST_COMMIT_MESSAGE" value="coad&#10;mutch coad" />
+    <MESSAGE value="daaes stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="daaes stuff" />
   </component>
 </project>
