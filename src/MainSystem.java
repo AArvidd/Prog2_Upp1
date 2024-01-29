@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+//huvudsystemet som kontrolerar alt och inehålelr funktionen som används av flera
 
 public class MainSystem {
 
@@ -13,9 +14,11 @@ public class MainSystem {
     String domain;
 
     public MainSystem() {
+        //funktionen som kontrolerar allt
         Scanner scan = new Scanner(System.in);
-        boolean exit = false;
-        
+        boolean run = true;
+
+        //alternativen man kan göra
         String[] questions = {
                 "close program",
                 "add Student",
@@ -23,11 +26,16 @@ public class MainSystem {
                 "add Courses",
                 "goto Schools"
         };
-        
-        while(true) {
+
+
+        while(run) {//så pogramet kan upprepas
             int choice;
 
-            while (true) {
+            //används för att ställa en fråga mes svar som int
+            //utan att programmet crachar och att svaret är innanfär ett område
+            //samt att om svaret är ogiltigt så kan frågan ställas igen
+
+            while (true) {//så att programmet kan hoppa hit
                 System.out.println("\nWhat do you want to do?");
                 for (int i = 0; i < questions.length; i++) {
                     System.out.println((i+1) + ": " + questions[i]);
@@ -52,23 +60,61 @@ public class MainSystem {
             }
             System.out.println();
 
-
+            //funktionerna som kan köras
             switch(choice){
-                case 0 -> exit = true;
+                case 0 -> run = false;
                 case 1 -> createStudent();
                 case 2 -> createSchool();
                 case 3 -> createCourse();
-            }
-
-            if (exit){
-                break;
+                case 4 -> gotoSchool();
             }
 
         }
         System.out.println("\nShutting down...");
     }
 
+
+    private void gotoSchool(){
+        Scanner scan = new Scanner(System.in);
+
+        if(this.schools.isEmpty()){
+            System.out.println("No schools exist");
+            return;
+        }
+
+        int choice;
+
+        while(true){
+            System.out.println("Witch school");
+
+            for (int i = 0; i < schools.size(); i++){
+                System.out.println((i + 1) + ": " + schools.get(1).getName());
+            }
+            System.out.print("Choice: ");
+
+            try{
+                choice = scan.nextInt();
+            }catch (Exception e){
+                System.out.println("Invalid choice");
+                scan.nextLine();
+                continue;
+            }
+
+            if(choice > 0 && choice <= schools.size()){
+                break;
+            }
+
+            System.out.println("Invalid choice");
+
+        }
+
+        schools.get(--choice).controll();
+
+    }
+
+
     public void createSchool(){
+        //skapar en skola och en rektor
         Scanner scan = new Scanner(System.in);
 
         System.out.print("Name of the school: ");
@@ -128,15 +174,16 @@ public class MainSystem {
             break;
         }
 
-        Principal temp = new Principal(this, fName, eName, phoneNumber, pSalary);
+        Principal temp = new Principal(this, fName, eName, phoneNumber, pSalary,null);
 
         addStaff(temp);
-        addSchool(new School(sName, temp));
+        addSchool(new School(this, sName, temp));
         temp.setSchool(this.schools.get(this.schools.size()-1));
 
     }
 
     private void createStudent(){
+        //skapar en elev och sätter den in i en class i en skola samt skapar elevens vårdnadshavare
         Scanner scan = new Scanner(System.in);
 
         //schools
@@ -287,6 +334,7 @@ public class MainSystem {
     }
 
     private void createCourse(){
+        //skapar en kurs
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Course's name");
@@ -297,6 +345,7 @@ public class MainSystem {
     }
 
     public Teacher createTeacher(){
+        //Skapar en lärare
         Scanner scan = new Scanner(System.in);
 
         System.out.print("What is the teacher's first name: ");
@@ -359,6 +408,7 @@ public class MainSystem {
     }
 
     public void createLectures(){
+        //skapen en lektions mall
         Scanner scan = new Scanner(System.in);
 
         System.out.print("What is the lesson's name: ");
@@ -393,6 +443,7 @@ public class MainSystem {
     }
 
     public Lectures copyLecture(int index, Teacher teacher){
+        //kopierar en lektionsmall så att skoler kan ha samma lektion med olika lärare
         Lectures template = this.lessons.get(index);
 
         return new Lectures(teacher, template.getName(), template.getPoints());

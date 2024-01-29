@@ -1,3 +1,5 @@
+//inehåller infotmation om en elev
+
 public class Student extends People {
 
     private Group group;
@@ -10,12 +12,14 @@ public class Student extends People {
     }
 
     public void shangefName(String fName) {
+        //ändrar elevens förnamn samt elevens email
         this.fName = fName;
         changeeMail("elev.ga");
 
     }
 
     public void changelName(String lName) {
+        //ändrar elevens efternamn samt elevens email
         this.lName = lName;
         changeeMail("elev.ga");
     }

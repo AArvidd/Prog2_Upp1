@@ -1,3 +1,5 @@
+//innehållen informationen till en vårdnadshavare
+
 public class Guardian extends People {
 
     Student child;

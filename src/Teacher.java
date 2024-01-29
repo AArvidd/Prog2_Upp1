@@ -1,3 +1,5 @@
+//inehåller inforrmationen om en lärare
+
 import java.util.ArrayList;
 
 public class Teacher extends Staff {

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+//inehåller flera lektioner och deras totala poäng
 
 public class Course {
 
@@ -22,6 +23,8 @@ public class Course {
     }
 
     public void populateCourse(){
+        //sätter in lektionen i en kurs
+
         Scanner scan = new Scanner(System.in);
 
         int choice;
@@ -80,6 +83,7 @@ public class Course {
     }
 
     private void chooseLesson(){
+        //lälger en befintlig lektion som existerar i mainSystem om det fins
         Scanner scan = new Scanner(System.in);
         ArrayList<Lectures> potential = main.getLessons();
 
@@ -114,19 +118,19 @@ public class Course {
             System.out.println("Illegal answer");
         }
 
-        Teacher teacher = main.createTeacher();
-        this.lessons.add(main.copyLecture(choice, teacher));
+        this.lessons.add(potential.get(choice));
         countPoints();
     }
 
     private void createLesson(){
+        //skapar en lektion
         main.createLectures();
-        Teacher teacher = main.createTeacher();
-        this.lessons.add(main.copyLecture(main.getLessons().size() - 1, teacher));
+        this.lessons.add(main.getLessons().get(main.getLessons().size() - 1));
         countPoints();
     }
 
     private void countPoints(){
+        //räknar mängden poäng kurchen är värd
         for (Lectures lesson: this.lessons)
             this.points += lesson.getPoints();
     }

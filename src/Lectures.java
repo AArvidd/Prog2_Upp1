@@ -1,3 +1,5 @@
+//inehåller informationen till en lektion
+
 public class Lectures {
 
     private Teacher teacher;

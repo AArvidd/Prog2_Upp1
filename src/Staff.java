@@ -1,3 +1,5 @@
+//inehåller informationen om anstälda
+
 public class Staff extends People {
 
     int salary;
@@ -12,6 +14,7 @@ public class Staff extends People {
     }
 
     public void setSalary(int salary){
+        //sätter lönen till anstälda och set till att de inte blir underbetalda
         if (salary < 20800) {
             salary = 20800;
             System.out.println("Pay to low, increased to 20800kr/month");

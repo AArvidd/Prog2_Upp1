@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//innehåller en klass av elever
 
 public class Group {
 

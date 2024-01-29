@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+//innehåller information om skolan samt funktioner för att göra ändringar i skolan
 
 public class School {
 
+    private MainSystem main;
     private String name;
     private ArrayList<Course> courses = new ArrayList<>();
     private ArrayList<Group> classes = new ArrayList<>();
@@ -9,13 +11,15 @@ public class School {
     private ArrayList<Staff> staff = new ArrayList<>();
     private ArrayList<Student> students = new ArrayList<>();
 
-    public School(String name, Principal principal) {
+    public School(MainSystem main, String name, Principal principal) {
+        this.main = main;
         this.name = name;
         this.principal = principal;
     }
 
-    public School(String name){
-        this.name = name;
+
+    public void controll(){
+
     }
 
 

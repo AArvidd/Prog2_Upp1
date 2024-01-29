@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="daaes stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="30ce860c-4736-4cd0-a718-a2fddb3c4f86" name="Changes" comment="added creation com courses and lectuers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Guardian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Guardian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lectures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lectures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/School.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/School.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Teacher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +108,8 @@
       <workItem from="1705943351501" duration="3652000" />
       <workItem from="1706014033860" duration="4369000" />
       <workItem from="1706267899444" duration="3957000" />
-      <workItem from="1706462260434" duration="4873000" />
+      <workItem from="1706462260434" duration="5961000" />
+      <workItem from="1706518277447" duration="4803000" />
     </task>
     <task id="LOCAL-00001" summary="Created all classFiles and started adding relations between classes">
       <option name="closed" value="true" />
@@ -168,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706018450296</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added creation com courses and lectuers">
+      <option name="closed" value="true" />
+      <created>1706467839949</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706467839949</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +198,7 @@
     <MESSAGE value="addet to the coad to define a child" />
     <MESSAGE value="coad&#10;mutch coad" />
     <MESSAGE value="daaes stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="daaes stuff" />
+    <MESSAGE value="added creation com courses and lectuers" />
+    <option name="LAST_COMMIT_MESSAGE" value="added creation com courses and lectuers" />
   </component>
 </project>
