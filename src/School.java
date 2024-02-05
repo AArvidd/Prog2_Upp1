@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 //innehåller information om skolan samt funktioner för att göra ändringar i skolan
 
 public class School {
@@ -18,7 +19,33 @@ public class School {
     }
 
 
-    public void controll(){
+    public void control(){
+        Scanner scan = new Scanner(System.in);
+
+        String[] questions = {
+                "add course",
+                "create class",
+                "add student"
+        };
+
+        while(true){
+            int choice;
+
+            System.out.println("\nWhat do you want to do?");
+            for (int i = 0; i < questions.length; i++) {
+                System.out.println((i+1) + ": " + questions[i]);
+            }
+            System.out.print("Choice: ");
+
+            try {
+                choice = scan.nextInt();
+            }catch (Exception e){
+                choice = -1;
+                System.out.println("Illegal answer");
+                continue;
+            }
+
+        }
 
     }
 

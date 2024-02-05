@@ -24,7 +24,8 @@ public class MainSystem {
                 "add Student",
                 "add Schools",
                 "add Courses",
-                "goto Schools"
+                "goto Schools",
+                "calculate salaries"
         };
 
 
@@ -67,12 +68,24 @@ public class MainSystem {
                 case 2 -> createSchool();
                 case 3 -> createCourse();
                 case 4 -> gotoSchool();
+                case 5 -> calculateSalaries();
             }
 
         }
         System.out.println("\nShutting down...");
     }
 
+
+    private void calculateSalaries(){//kalkulerar den samansätta lönen av alla anstälda
+        int expenditure = 0;
+        for(Staff current : staff){
+            expenditure += current.getSalary();
+        }
+        String text = expenditure + " kr";
+        if(expenditure == 0)
+            text = "nothing";
+        System.out.printf("\nCurrently paying %s in salary to the staff\n", text);
+    }
 
     private void gotoSchool(){
         Scanner scan = new Scanner(System.in);
@@ -108,7 +121,7 @@ public class MainSystem {
 
         }
 
-        schools.get(--choice).controll();
+        schools.get(--choice).control();
 
     }
 

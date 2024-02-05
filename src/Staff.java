@@ -22,4 +22,7 @@ public class Staff extends People {
         this.salary = salary;
     }
 
+    public int getSalary() {
+        return salary;
+    }
 }
